@@ -1,6 +1,6 @@
 module TelegramBot
   # This object represents an audio file to be treated as music by the Telegram clients.
-  class Message::Attachment::Audio < Message::Attachment::Base
+  class Message::Audio < Message::Base
     attribute :file_id,   Integer
     attribute :file_size, Integer
 

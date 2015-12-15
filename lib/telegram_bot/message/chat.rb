@@ -1,6 +1,8 @@
 module TelegramBot
   # This object represents a chat.
-  class Messages::Chat < Messages::Base
+  class Message::Chat < Message::Base
+    include Virtus.model
+
     attribute :id,          Integer
     attribute :type,        String
     attribute :title,       String
