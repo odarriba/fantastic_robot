@@ -5,7 +5,7 @@ require 'telegram_bot/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "telegram_bot"
-  spec.version       = Telegram::Bot::VERSION
+  spec.version       = TelegramBot::VERSION
   spec.authors       = ["Óscar de Arriba"]
   spec.email         = ["odarriba@gmail.com"]
 
