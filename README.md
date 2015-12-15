@@ -1,4 +1,4 @@
-# telegram-bot-gem
+# telegram_bot-gem
 
 The aim of this gem is to provide a useful wrapper of Telegram's Bot API that makes use of Webhooks functionality.
 
@@ -7,7 +7,7 @@ The aim of this gem is to provide a useful wrapper of Telegram's Bot API that ma
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'telegram-bot'
+gem 'telegram_bot'
 ```
 
 And then execute:
@@ -20,11 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Here will be useage information when the first version of the gem is ready!
+TODO: Here will be usage information when the first version of the gem is ready!
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/odarriba/telegram-bot. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at [https://github.com/odarriba/telegram_bot](https://github.com/odarriba/telegram_bot). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 Everyone's contributions are welcome, so if you want to contribute, just fork this repo, make the changes you want and create a descriptive pull request :)
 
