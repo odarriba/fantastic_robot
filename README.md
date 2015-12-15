@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install telegram-bot
+    $ gem install telegram_bot
 
 ## Usage
 
