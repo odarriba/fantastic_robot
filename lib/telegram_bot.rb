@@ -1,7 +1,5 @@
-require "virtus"
-require "telegram_bot/user"
-require "telegram_bot/message"
-require "telegram_bot/update"
+require "active_model"
+require "telegram_bot/models"
 require "telegram_bot/version"
 
 module TelegramBot
