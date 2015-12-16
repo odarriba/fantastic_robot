@@ -1,6 +1,6 @@
 module TelegramBot
   # This object represents a voice note.
-  class Message::Voice < Message::Base
+  class MessageElement::Voice < MessageElement::Base
     attribute :file_id,   String
     attribute :file_size, Integer
 
