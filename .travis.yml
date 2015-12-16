@@ -11,3 +11,8 @@ before_install:
   - gem --version
 
 script: bundle exec rspec
+
+branches:
+  only:
+    - master
+    - development
