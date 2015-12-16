@@ -9,9 +9,6 @@ Gem::Specification.new do |s|
   s.authors       = ["Óscar de Arriba"]
   s.email         = ["odarriba@gmail.com"]
 
-  s.required_ruby_version     = '>= 1.9.3'
-  s.required_rubygems_version = '>= 1.8.11'
-
   s.summary       = %q{Ruby wrapper of Telegram's Bot API with webhooks functionality}
   s.description   = %q{Ruby wrapper of Telegram's Bot API to create applications making use of Webhooks functionality.}
   s.homepage      = ""
@@ -24,7 +21,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'virtus'
 
-  s.add_development_dependency "~> 1.11"
+  s.add_development_dependency "bundler", "~> 1.11"
   s.add_development_dependency "rake", "~> 10.0"
   s.add_development_dependency "rspec", "~> 3.0"
 end
