@@ -17,6 +17,8 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     builder (3.2.2)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
     i18n (0.7.0)
     json (1.8.3)
     minitest (5.8.3)
@@ -30,6 +32,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.10)
+  factory_girl (~> 4.0)
   minitest (~> 5.0)
   rake (~> 10.0)
   telegram_bot!
