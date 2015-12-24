@@ -11,7 +11,7 @@ before_install:
   - gem install bundler
   - bundler --version
 
-script: bundle exec rspec
+script: bundle exec rake test
 
 branches:
   only:
