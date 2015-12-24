@@ -25,4 +25,11 @@ class UpdateTest < ActiveSupport::TestCase
   def test_numeric_attributes
     model_with_numeric_attributes(@model_name, [:update_id])
   end
+
+  def test_message_conversion
+    subject = TelegramBot::Model::Update.new(FactoryGirl.attributes_for(:update_with_message))
+
+    assert(subject.valid?)
+    assert_equal(TelegramBot::Model::Message, subject.message.class)
+  end
 end

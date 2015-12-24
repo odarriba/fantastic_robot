@@ -15,5 +15,18 @@ FactoryGirl.define do
     channel_chat_created { true }
     migrate_to_chat_id { Faker::Number.number(10) }
     migrate_from_chat_id { Faker::Number.number(10) }
+
+    factory :message_with_required_fields_only do
+      fordward_date { nil }
+      text { nil }
+      caption { nil }
+      new_chat_title { nil }
+      delete_chat_photo { nil }
+      group_chat_created { nil }
+      supergroup_chat_created { nil }
+      channel_chat_created { nil }
+      migrate_to_chat_id { nil }
+      migrate_from_chat_id { nil }
+    end
   end
 end

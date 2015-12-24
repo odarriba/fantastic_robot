@@ -10,7 +10,7 @@ module TelegramBot
       FIELD_CONVERSIONS = {}
 
       # Initializer that converts the fields received if necessary
-      def intialize(attributes = {})
+      def initialize(attributes = {}, field_conversions = {})
         attributes.each do |name, value|
           if (value.is_a?(Array))
             # It's a collection of objects, build each one independently and
@@ -19,7 +19,7 @@ module TelegramBot
 
             value.each do |v|
               # onvert (if possible) and add to the collection
-              v = FIELD_CONVERSIONS[name.to_sym].new(v) unless (FIELD_CONVERSIONS[name.to_sym].blank?)
+              v = self.class::FIELD_CONVERSIONS[name.to_sym].new(v) unless (self.class::FIELD_CONVERSIONS[name.to_sym].blank?)
               objects << v
             end
 
@@ -28,9 +28,12 @@ module TelegramBot
             # It's a single object, we try to built it
 
             # Convert (if possible) and assign
-            value = FIELD_CONVERSIONS[name.to_sym].new(value) unless (FIELD_CONVERSIONS[name.to_sym].blank?)
+            value = self.class::FIELD_CONVERSIONS[name.to_sym].new(value) unless (self.class::FIELD_CONVERSIONS[name.to_sym].blank?)
+
             send("#{name}=", value)
           end
+
+          attributes.delete(name)
         end
 
         super()
