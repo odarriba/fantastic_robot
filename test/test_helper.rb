@@ -1,4 +1,5 @@
 require 'factory_girl'
+require 'faker'
 require 'telegram_bot'
 
 # Load support files
