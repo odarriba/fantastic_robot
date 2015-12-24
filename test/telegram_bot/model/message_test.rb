@@ -27,8 +27,8 @@ class MessageTest < ActiveSupport::TestCase
   end
 
   def test_chat_conversion
-    subject = FactoryGirl.build(@model_name)
-    
+    subject = TelegramBot::Model::Message.new(FactoryGirl.attributes_for(@model_name))
+
     assert(subject.valid?)
     assert_equal(TelegramBot::Model::Chat, subject.chat.class)
   end
