@@ -10,7 +10,7 @@ module ModelWithAttributes
 
       attribute_list.each do |attrib, value|
         # Test that the attribute is readable
-        assert_respond_to(object, attrib, "Error while testing attribute :#{attrib}")
+        assert_respond_to(object, "#{attrib}=", "Error while testing attribute :#{attrib}")
 
         # Test that the attribute returns it's value
         assert_equal(object.send(attrib), value, "Error while testing attribute :#{attrib}")
