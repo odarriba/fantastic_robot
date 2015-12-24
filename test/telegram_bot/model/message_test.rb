@@ -25,4 +25,11 @@ class MessageTest < ActiveSupport::TestCase
   def test_numeric_attributes
     model_with_numeric_attributes(@model_name, [:message_id, :date, :migrate_to_chat_id, :migrate_from_chat_id])
   end
+
+  def test_chat_conversion
+    subject = FactoryGirl.build(@model_name)
+    
+    assert(subject.valid?)
+    assert_equal(TelegramBot::Model::Chat, subject.chat.class)
+  end
 end
