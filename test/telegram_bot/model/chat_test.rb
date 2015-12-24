@@ -3,22 +3,14 @@ require 'test_helper'
 class ChatTest < ActiveSupport::TestCase
   include ModelWithAttributes
   include ModelWithRequiredAttributes
+  include ModelWithNumericAttributes
 
   def setup
     @model_name = :chat
-    @required_attributes = [:id, :type]
     @subject = FactoryGirl.build(@model_name)
   end
 
   def test_that_factory_is_valid
-    assert(@subject.valid?)
-  end
-
-  def test_id_numericality
-    @subject.id = "test"
-    assert(!@subject.valid?)
-
-    @subject.id = 2
     assert(@subject.valid?)
   end
 
@@ -27,7 +19,11 @@ class ChatTest < ActiveSupport::TestCase
   end
 
   def test_model_with_required_attributes
-    model_with_required_attributes(@model_name, @required_attributes)
+    model_with_required_attributes(@model_name, [:id, :type])
+  end
+
+  def test_numeric_attributes
+    model_with_numeric_attributes(@model_name, [:id])
   end
 
   def test_type_possibilities
