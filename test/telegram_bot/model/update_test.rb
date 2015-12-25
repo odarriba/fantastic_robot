@@ -27,8 +27,13 @@ class UpdateTest < ActiveSupport::TestCase
   end
 
   def test_message_conversion
-    subject = TelegramBot::Model::Update.new(FactoryGirl.attributes_for(:update_with_message))
+    subject = FactoryGirl.build(@model_name)
 
+    subject.message = FactoryGirl.attributes_for(:message)
+    assert(subject.valid?)
+    assert_equal(TelegramBot::Model::Message, subject.message.class)
+
+    subject.message = FactoryGirl.build(:message)
     assert(subject.valid?)
     assert_equal(TelegramBot::Model::Message, subject.message.class)
   end

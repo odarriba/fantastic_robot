@@ -3,6 +3,7 @@
 FactoryGirl.define do
   factory :update, class: TelegramBot::Model::Update do
     update_id { Faker::Number.number(10) }
+    message { nil }
 
     factory :update_with_message do
       message { attributes_for :message }

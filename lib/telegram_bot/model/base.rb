@@ -10,33 +10,29 @@ module TelegramBot
       FIELD_CONVERSIONS = {}
 
       # Initializer that converts the fields received if necessary
-      def initialize(attributes = {}, field_conversions = {})
-        attributes.each do |name, value|
-          if (value.is_a?(Array))
-            # It's a collection of objects, build each one independently and
-            # then assign to the field in an array
-            objects = []
+      def initialize(attributes = {})
+        super()
 
-            value.each do |v|
-              # onvert (if possible) and add to the collection
-              v = self.class::FIELD_CONVERSIONS[name.to_sym].new(v) unless (self.class::FIELD_CONVERSIONS[name.to_sym].blank?)
-              objects << v
+        self.class::FIELD_CONVERSIONS.each do |field_name, field_type|
+          self.class.send(:define_method, "#{field_name}=") do |value|
+            if (value.is_a?(Array))
+              value.map! do |v|
+                v = field_type.new(v) unless (v.class == field_type || v.blank?)
+              end
+            else
+              value = field_type.new(value) unless (value.class == field_type || value.blank?)
             end
 
-            send("#{name}=", objects)
-          else
-            # It's a single object, we try to built it
-
-            # Convert (if possible) and assign
-            value = self.class::FIELD_CONVERSIONS[name.to_sym].new(value) unless (self.class::FIELD_CONVERSIONS[name.to_sym].blank?)
-
-            send("#{name}=", value)
+            instance_variable_set("@#{field_name}", value)
           end
-
-          attributes.delete(name)
         end
 
-        super()
+        unless attributes.blank?
+          attributes.each do |name, value|
+            self.send("#{name}=", value)
+            attributes.delete(name)
+          end
+        end
       end
     end
   end
