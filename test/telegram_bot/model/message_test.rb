@@ -28,6 +28,23 @@ class MessageTest < ActiveSupport::TestCase
   end
 
   def test_model_with_conversions
-    model_with_conversions(@model_name, {chat: :chat})
+    model_with_conversions(@model_name,
+    {
+      from: :user,
+      chat: :chat,
+      forward_from: :user,
+      reply_to_message: :message,
+      audio: :attachment_audio,
+      document: :attachment_document,
+      photo: :attachment_photo_size,
+      sticker: :attachment_sticker,
+      video: :attachment_video,
+      voice: :attachment_voice,
+      contact: :attachment_contact,
+      location: :attachment_location,
+      new_chat_participant: :user,
+      left_chat_participant: :user,
+      new_chat_photo: :attachment_photo_size
+    })
   end
 end

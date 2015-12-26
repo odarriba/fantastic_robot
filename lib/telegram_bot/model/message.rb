@@ -32,7 +32,7 @@ module TelegramBot
     FIELD_CONVERSIONS = {
       from: TelegramBot::Model::User,
       chat: TelegramBot::Model::Chat,
-      fordward_from: TelegramBot::Model::User,
+      forward_from: TelegramBot::Model::User,
       reply_to_message: TelegramBot::Model::Message,
       audio: TelegramBot::Model::Attachment::Audio,
       document: TelegramBot::Model::Attachment::Document,

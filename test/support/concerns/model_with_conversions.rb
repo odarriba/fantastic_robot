@@ -14,14 +14,14 @@ module ModelWithConversions
         subject.send("#{field_name}=", object)
 
         assert(subject.valid?, "Subject isn't valid after assigning a hash of values to the field - #{field_name}")
-        assert_equal(subject.class::FIELD_CONVERSIONS[field_name], subject.send("#{field_name}").class, "Object returned hasn't got the type expected")
+        assert_equal(subject.class::FIELD_CONVERSIONS[field_name], subject.send("#{field_name}").class, "Object returned hasn't got the type expected - #{field_name}")
 
         # Assign as a Hash of properties
         object = FactoryGirl.build(factory_name)
         subject.send("#{field_name}=", object)
 
         assert(subject.valid?, "Subject isn't valid after assigning a built object to the field - #{field_name}")
-        assert_equal(subject.class::FIELD_CONVERSIONS[field_name], subject.send("#{field_name}").class, "Object returned hasn't got the type expected")
+        assert_equal(subject.class::FIELD_CONVERSIONS[field_name], subject.send("#{field_name}").class, "Object returned hasn't got the type expected - #{field_name}")
       end
     end
   end
