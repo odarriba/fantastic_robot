@@ -10,7 +10,7 @@ FactoryGirl.define do
     thumb { attributes_for :attachment_photo_size }
     mime_type { ['video/mp4', 'video/ogg', 'video/webm'].sample }
 
-    factory :attachment_sticker_without_optional_fields do
+    factory :attachment_video_without_optional_fields do
       file_size { nil }
       thumb { nil }
       mime_type { nil }

@@ -1,12 +1,12 @@
-require 'telegram_bot/model/message_attachment/base'
-require 'telegram_bot/model/message_attachment/photo_size'
-require 'telegram_bot/model/message_attachment/audio'
-require 'telegram_bot/model/message_attachment/contact'
-require 'telegram_bot/model/message_attachment/document'
-require 'telegram_bot/model/message_attachment/location'
-require 'telegram_bot/model/message_attachment/sticker'
-require 'telegram_bot/model/message_attachment/video'
-require 'telegram_bot/model/message_attachment/voice'
+require 'telegram_bot/model/attachment/base'
+require 'telegram_bot/model/attachment/photo_size'
+require 'telegram_bot/model/attachment/audio'
+require 'telegram_bot/model/attachment/contact'
+require 'telegram_bot/model/attachment/document'
+require 'telegram_bot/model/attachment/location'
+require 'telegram_bot/model/attachment/sticker'
+require 'telegram_bot/model/attachment/video'
+require 'telegram_bot/model/attachment/voice'
 
 module TelegramBot
   class Model::Message < Model::Base
