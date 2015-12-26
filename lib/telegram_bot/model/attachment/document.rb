@@ -1,6 +1,6 @@
 module TelegramBot
   # This object represents a general file (as opposed to photos, voice messages and audio files).
-  class Model::MessageAttachment::Document < Model::MessageAttachment::Base
+  class Model::Attachment::Document < Model::Attachment::Base
 
     attr_accessor :file_id, :file_size, :thumb, :file_name, :mime_type
 
@@ -9,7 +9,7 @@ module TelegramBot
 
     # Field conversions of this model
     FIELD_CONVERSIONS = {
-      thumb: TelegramBot::Model::MessageAttachment::PhotoSize
+      thumb: TelegramBot::Model::Attachment::PhotoSize
     }
     
   end

@@ -34,17 +34,17 @@ module TelegramBot
       chat: TelegramBot::Model::Chat,
       fordward_from: TelegramBot::Model::User,
       reply_to_message: TelegramBot::Model::Message,
-      audio: TelegramBot::Model::MessageAttachment::Audio,
-      document: TelegramBot::Model::MessageAttachment::Document,
-      photo: TelegramBot::Model::MessageAttachment::PhotoSize,
-      sticker: TelegramBot::Model::MessageAttachment::Sticker,
-      video: TelegramBot::Model::MessageAttachment::Video,
-      voice: TelegramBot::Model::MessageAttachment::Voice,
-      contact: TelegramBot::Model::MessageAttachment::Contact,
-      location: TelegramBot::Model::MessageAttachment::Location,
+      audio: TelegramBot::Model::Attachment::Audio,
+      document: TelegramBot::Model::Attachment::Document,
+      photo: TelegramBot::Model::Attachment::PhotoSize,
+      sticker: TelegramBot::Model::Attachment::Sticker,
+      video: TelegramBot::Model::Attachment::Video,
+      voice: TelegramBot::Model::Attachment::Voice,
+      contact: TelegramBot::Model::Attachment::Contact,
+      location: TelegramBot::Model::Attachment::Location,
       new_chat_participant: TelegramBot::Model::User,
       left_chat_participant: TelegramBot::Model::User,
-      new_chat_photo: TelegramBot::Model::MessageAttachment::PhotoSize
+      new_chat_photo: TelegramBot::Model::Attachment::PhotoSize
     }
 
   end

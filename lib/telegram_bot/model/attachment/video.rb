@@ -1,6 +1,6 @@
 module TelegramBot
   # This object represents a video file.
-  class Model::MessageAttachment::Video < Model::MessageAttachment::Base
+  class Model::Attachment::Video < Model::Attachment::Base
 
     attr_accessor :file_id, :file_size, :width, :height, :duration, :thumb, :mime_type
 
@@ -10,7 +10,7 @@ module TelegramBot
 
     # Field conversions of this model
     FIELD_CONVERSIONS = {
-      thumb: TelegramBot::Model::MessageAttachment::PhotoSize
+      thumb: TelegramBot::Model::Attachment::PhotoSize
     }
     
   end

@@ -9,7 +9,7 @@ FactoryGirl.define do
     first_name { Faker::Name.first_name }
     last_name { Faker::Name.last_name }
 
-    factory :chat_with_required_fields_only do
+    factory :chat_without_optional_fields do
       title { nil }
       username { nil }
       first_name { nil }

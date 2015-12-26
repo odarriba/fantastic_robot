@@ -1,6 +1,6 @@
 module TelegramBot
   # This object represents a phone contact.
-  class Model::MessageAttachment::Contact < Model::MessageAttachment::Base
+  class Model::Attachment::Contact < Model::Attachment::Base
     
     attr_accessor :phone_number, :first_name, :last_name, :user_id
 

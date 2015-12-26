@@ -1,6 +1,6 @@
 module TelegramBot
   # This object represents a point on the map.
-  class Model::MessageAttachment::Location < Model::MessageAttachment::Base
+  class Model::Attachment::Location < Model::Attachment::Base
     attr_accessor :longitude, :latitude
 
     validates :longitude, :latitude, presence: true

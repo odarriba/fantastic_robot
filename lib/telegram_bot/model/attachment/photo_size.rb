@@ -1,6 +1,6 @@
 module TelegramBot
   # This object represents one size of a photo or a file / sticker thumbnail.
-  class Model::MessageAttachment::PhotoSize < Model::MessageAttachment::Base
+  class Model::Attachment::PhotoSize < Model::Attachment::Base
 
     attr_accessor :file_id, :file_size, :width, :height
 

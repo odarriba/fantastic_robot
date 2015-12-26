@@ -1,6 +1,6 @@
 module TelegramBot
   # This object represents a sticker.
-  class Model::MessageAttachment::Sticker < Model::MessageAttachment::Base
+  class Model::Attachment::Sticker < Model::Attachment::Base
 
     attr_accessor :file_id, :file_size, :width, :height, :thumb
 
@@ -10,7 +10,7 @@ module TelegramBot
 
     # Field conversions of this model
     FIELD_CONVERSIONS = {
-      thumb: TelegramBot::Model::MessageAttachment::PhotoSize
+      thumb: TelegramBot::Model::Attachment::PhotoSize
     }
 
   end

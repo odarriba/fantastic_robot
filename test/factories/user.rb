@@ -7,7 +7,7 @@ FactoryGirl.define do
     first_name { Faker::Name.first_name }
     last_name { Faker::Name.last_name }
 
-    factory :user_with_required_fields_only do
+    factory :user_without_optional_fields do
       username { nil }
       last_name { nil }
     end

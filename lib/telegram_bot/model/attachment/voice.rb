@@ -1,6 +1,6 @@
 module TelegramBot
   # This object represents a voice note.
-  class Model::MessageAttachment::Voice < Model::MessageAttachment::Base
+  class Model::Attachment::Voice < Model::Attachment::Base
 
     attr_accessor :file_id, :file_size, :duration, :mime_type
 

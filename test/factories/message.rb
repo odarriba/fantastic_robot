@@ -16,7 +16,7 @@ FactoryGirl.define do
     migrate_to_chat_id { Faker::Number.number(10) }
     migrate_from_chat_id { Faker::Number.number(10) }
 
-    factory :message_with_required_fields_only do
+    factory :message_without_optional_fields do
       fordward_date { nil }
       text { nil }
       caption { nil }
