@@ -13,25 +13,28 @@ module TelegramBot
       def initialize(attributes = {})
         super()
 
+        # Define a setter for each field that need to be converted
         self.class::FIELD_CONVERSIONS.each do |field_name, field_type|
           self.class.send(:define_method, "#{field_name}=") do |value|
             if (value.is_a?(Array))
+              # If we receive an array, process each value
               value.map! do |v|
-                v = field_type.new(v) unless (v.class == field_type || v.blank?)
+                # Convert each object except if it is already converted or nil
+                v = ((v.class == field_type || v.nil?) ? v : field_type.new(v))
               end
             else
-              value = field_type.new(value) unless (value.class == field_type || value.blank?)
+              # If it isn't an array, try to convert the object
+              value = field_type.new(value) unless (value.class == field_type || value.nil?)
             end
 
+            # Set the result
             instance_variable_set("@#{field_name}", value)
           end
         end
 
         unless attributes.blank?
-          attributes.each do |name, value|
-            self.send("#{name}=", value)
-            attributes.delete(name)
-          end
+          # Try to set each attribute received
+          attributes.each{ |name, value| self.send("#{name}=", value) }
         end
       end
     end

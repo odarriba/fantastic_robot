@@ -36,7 +36,7 @@ class MessageTest < ActiveSupport::TestCase
       reply_to_message: :message,
       audio: :attachment_audio,
       document: :attachment_document,
-      photo: :attachment_photo_size,
+      photo: [:attachment_photo_size],
       sticker: :attachment_sticker,
       video: :attachment_video,
       voice: :attachment_voice,
@@ -44,7 +44,7 @@ class MessageTest < ActiveSupport::TestCase
       location: :attachment_location,
       new_chat_participant: :user,
       left_chat_participant: :user,
-      new_chat_photo: :attachment_photo_size
+      new_chat_photo: [:attachment_photo_size]
     })
   end
 end
