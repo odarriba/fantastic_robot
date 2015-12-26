@@ -4,6 +4,7 @@ class MessageTest < ActiveSupport::TestCase
   include ModelWithAttributes
   include ModelWithRequiredAttributes
   include ModelWithNumericAttributes
+  include ModelWithConversions
 
   def setup
     @model_name = :message
@@ -26,15 +27,7 @@ class MessageTest < ActiveSupport::TestCase
     model_with_numeric_attributes(@model_name, [:message_id, :date, :migrate_to_chat_id, :migrate_from_chat_id])
   end
 
-  def test_chat_conversion
-    subject = FactoryGirl.build(@model_name)
-
-    subject.chat = FactoryGirl.attributes_for(:chat)
-    assert(subject.valid?)
-    assert_equal(TelegramBot::Model::Chat, subject.chat.class)
-
-    subject.chat = FactoryGirl.build(:chat)
-    assert(subject.valid?)
-    assert_equal(TelegramBot::Model::Chat, subject.chat.class)
+  def test_model_with_conversions
+    model_with_conversions(@model_name, {chat: :chat})
   end
 end
