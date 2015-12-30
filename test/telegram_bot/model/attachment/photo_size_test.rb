@@ -4,6 +4,7 @@ class AttachmentPhotoSizeTest < ActiveSupport::TestCase
   include ModelWithAttributes
   include ModelWithRequiredAttributes
   include ModelWithNumericAttributes
+  include ModelWithSerialization
 
   def setup
     @model_name = :attachment_photo_size
@@ -24,5 +25,9 @@ class AttachmentPhotoSizeTest < ActiveSupport::TestCase
 
   def test_numeric_attributes
     model_with_numeric_attributes(@model_name, [:file_size, :width, :height])
+  end
+
+  def test_model_with_serialization
+    model_with_serialization(@model_name)
   end
 end

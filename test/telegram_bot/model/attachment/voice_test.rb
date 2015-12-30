@@ -4,7 +4,7 @@ class AttachmentVoiceTest < ActiveSupport::TestCase
   include ModelWithAttributes
   include ModelWithRequiredAttributes
   include ModelWithNumericAttributes
-  include ModelWithConversions
+  include ModelWithSerialization
 
   def setup
     @model_name = :attachment_voice
@@ -25,5 +25,9 @@ class AttachmentVoiceTest < ActiveSupport::TestCase
 
   def test_numeric_attributes
     model_with_numeric_attributes(@model_name, [:file_size, :duration])
+  end
+
+  def test_model_with_serialization
+    model_with_serialization(@model_name)
   end
 end

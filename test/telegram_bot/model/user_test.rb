@@ -4,6 +4,7 @@ class UserTest < ActiveSupport::TestCase
   include ModelWithAttributes
   include ModelWithRequiredAttributes
   include ModelWithNumericAttributes
+  include ModelWithSerialization
 
   def setup
     @model_name = :user
@@ -24,5 +25,9 @@ class UserTest < ActiveSupport::TestCase
 
   def test_numeric_attributes
     model_with_numeric_attributes(@model_name, [:id])
+  end
+
+  def test_model_with_serialization
+    model_with_serialization(@model_name)
   end
 end

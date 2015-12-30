@@ -41,12 +41,9 @@ module TelegramBot
         Hash[instance_variables.map{|attrib| [attrib[1..attrib.size], nil]}]
       end
 
-      # Proxy to get a hash-ed version of the object.
+      # Proxy to get a serialized version of the object.
       def to_h
-        result = self.serializable_hash
-
-        # Try to serialize every object received
-        result.each{|k,v| result[k] = recursive_serialization(v)}
+        recursive_serialization(self)
       end
 
       private
@@ -56,8 +53,12 @@ module TelegramBot
         if (object.is_a?(Array))
           # If it's an array, try to serialize each element
           return object.map{|o| recursive_serialization(o)}
+        elsif (object.is_a?(Hash))
+          # It's a hash, convert each key to sym and try to serialize each value
+          return object.map{|k,v| [k.to_sym, recursive_serialization(v)]}.to_h
         elsif (object.respond_to?(:serializable_hash))
-          return object.serializable_hash
+          # If it can be seralized, serialize and try to recursively convert it's attributes
+          return recursive_serialization(object.serializable_hash)
         else
           return object
         end

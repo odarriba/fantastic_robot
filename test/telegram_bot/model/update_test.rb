@@ -4,6 +4,7 @@ class UpdateTest < ActiveSupport::TestCase
   include ModelWithAttributes
   include ModelWithRequiredAttributes
   include ModelWithNumericAttributes
+  include ModelWithSerialization
   include ModelWithConversions
 
   def setup
@@ -25,6 +26,10 @@ class UpdateTest < ActiveSupport::TestCase
 
   def test_numeric_attributes
     model_with_numeric_attributes(@model_name, [:update_id])
+  end
+
+  def test_model_with_serialization
+    model_with_serialization(@model_name)
   end
 
   def test_model_with_conversions

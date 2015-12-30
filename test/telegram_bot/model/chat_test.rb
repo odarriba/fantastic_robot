@@ -4,6 +4,7 @@ class ChatTest < ActiveSupport::TestCase
   include ModelWithAttributes
   include ModelWithRequiredAttributes
   include ModelWithNumericAttributes
+  include ModelWithSerialization
 
   def setup
     @model_name = :chat
@@ -24,6 +25,10 @@ class ChatTest < ActiveSupport::TestCase
 
   def test_numeric_attributes
     model_with_numeric_attributes(@model_name, [:id])
+  end
+
+  def test_model_with_serialization
+    model_with_serialization(@model_name)
   end
 
   def test_type_possibilities
