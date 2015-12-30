@@ -43,7 +43,24 @@ module TelegramBot
 
       # Proxy to get a hash-ed version of the object.
       def to_h
-        self.serializable_hash
+        result = self.serializable_hash
+
+        # Try to serialize every object received
+        result.each{|k,v| result[k] = recursive_serialization(v)}
+      end
+
+      private
+
+      # Method to try to recursively seralize the objects received
+      def recursive_serialization object
+        if (object.is_a?(Array))
+          # If it's an array, try to serialize each element
+          return object.map{|o| recursive_serialization(o)}
+        elsif (object.respond_to?(:serializable_hash))
+          return object.serializable_hash
+        else
+          return object
+        end
       end
     end
   end
