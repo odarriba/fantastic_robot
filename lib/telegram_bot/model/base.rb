@@ -3,6 +3,8 @@ module TelegramBot
     class Base
       include ::ActiveModel::Model
       include ::ActiveModel::Validations
+      include ::ActiveModel::Serialization
+      include ::ActiveModel::Serializers::JSON
 
       # As the models include a lot of different objects related,
       # we build a conversion hash that indicates the type of objects
@@ -11,7 +13,6 @@ module TelegramBot
 
       # Initializer that converts the fields received if necessary
       def initialize(attributes = {})
-        super()
 
         # Define a setter for each field that need to be converted
         self.class::FIELD_CONVERSIONS.each do |field_name, field_type|
@@ -32,10 +33,17 @@ module TelegramBot
           end
         end
 
-        unless attributes.blank?
-          # Try to set each attribute received
-          attributes.each{ |name, value| self.send("#{name}=", value) }
-        end
+        super(attributes)
+      end
+
+      # Attribute map for ActiveModel::Serialization.
+      def attributes
+        Hash[instance_variables.map{|attrib| [attrib[1..attrib.size], nil]}]
+      end
+
+      # Proxy to get a hash-ed version of the object.
+      def to_h
+        self.serializable_hash
       end
     end
   end
