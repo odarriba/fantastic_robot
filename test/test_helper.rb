@@ -2,6 +2,9 @@ require 'factory_girl'
 require 'faker'
 require 'telegram_bot'
 
+# Fix deprecation message
+ActiveSupport.test_order = :random
+
 # Load support files
 Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
 
