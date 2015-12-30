@@ -55,7 +55,7 @@ module TelegramBot
           return object.map{|o| recursive_serialization(o)}
         elsif (object.is_a?(Hash))
           # It's a hash, convert each key to sym and try to serialize each value
-          return object.map{|k,v| [k.to_sym, recursive_serialization(v)]}.to_h
+          return Hash[object.map{|k,v| [k.to_sym, recursive_serialization(v)]}]
         elsif (object.respond_to?(:serializable_hash))
           # If it can be seralized, serialize and try to recursively convert it's attributes
           return recursive_serialization(object.serializable_hash)
