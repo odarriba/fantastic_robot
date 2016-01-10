@@ -5,7 +5,7 @@ module TelegramBot
     attr_reader :conn
 
     # White-listed API methods
-    VALID_API_METHODS = [:setWebhook]
+    VALID_API_METHODS = [:setWebhook, :sendMessage]
 
     def initialize
       # Create the connection object to make calls to the API

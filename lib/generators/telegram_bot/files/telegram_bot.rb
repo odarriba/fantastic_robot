@@ -9,4 +9,4 @@ TelegramBot.configure do |config|
   config.callback_url = 'http://your_app.dev/receive'
 end
 
-TelegramBot.initialize!
+TelegramBot.initialize! if(defined?(::Thin) || defined?(::Unicorn) || defined?(::Passenger) || defined?(::Puma))
