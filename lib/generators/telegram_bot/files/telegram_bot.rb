@@ -8,3 +8,5 @@ TelegramBot.configure do |config|
   # Callback URL of the webhook
   config.callback_url = 'http://your_app.dev/receive'
 end
+
+TelegramBot.initialize!
