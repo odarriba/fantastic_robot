@@ -1,6 +1,7 @@
 require "active_model"
 require "faraday"
 require "telegram_bot/models"
+require "telegram_bot/requests"
 require "telegram_bot/configuration"
 require "telegram_bot/connection"
 require "telegram_bot/version"
@@ -37,8 +38,22 @@ module TelegramBot
     @connection ||= Connection.new
   end
 
+  ##
+  # Function to register the configured webhook against the Telegram API.
+  #
   def self.register_webhook
     res = self.connection.api_call(:setWebhook, {url: self.configuration.callback_url})
     raise RuntimeError, "Webhook couldn't be setted: #{res.body}" if (res.status != 200)
+  end
+
+  ##
+  # Method to respond to an update with a request.
+  # It can manage a Request object or a hash.
+  #
+  def self.response_json(request)
+    return nil unless request.is_a?(Hash) || request.is_a?(TelegramBot::Request::Base)
+
+    payload = request.to_h
+    render json: payload
   end
 end
