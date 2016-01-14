@@ -23,6 +23,16 @@ module TelegramBot
         recursive_serialization(self)
       end
 
+      # Send request to Telegram API
+      def send
+        raise ArgumentError, "Method name not defined" if (self.method.blank?)
+
+        payload = self.to_h
+        payload.delete(:method)
+
+        TelegramBot.connection.api_call self.method, payload
+      end
+
       private
 
       # Method to try to recursively seralize the objects received
