@@ -42,8 +42,7 @@ module TelegramBot
   # Function to register the configured webhook against the Telegram API.
   #
   def self.register_webhook
-    res = self.connection.api_call(:setWebhook, {url: self.configuration.callback_url})
-    raise RuntimeError, "Webhook couldn't be setted: #{res.body}" if (res.status != 200)
+    TelegramBot::Request::SetWebhook.new(url: self.configuration.callback_url).send
   end
 
   ##
@@ -52,7 +51,6 @@ module TelegramBot
   #
   def self.response_json(request)
     return nil unless request.is_a?(Hash) || request.is_a?(TelegramBot::Request::Base)
-
     request.to_h
   end
 end
