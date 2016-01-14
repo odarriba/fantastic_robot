@@ -38,7 +38,7 @@ module TelegramBot
 
       # Attribute map for ActiveModel::Serialization.
       def attributes
-        Hash[instance_variables.map{|attrib| [attrib[1..attrib.size], nil]}]
+        Hash[instance_variables.map{|attrib| [attrib.to_s[1..attrib.to_s.size], nil]}]
       end
 
       # Proxy to get a serialized version of the object.

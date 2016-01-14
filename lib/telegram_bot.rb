@@ -53,7 +53,6 @@ module TelegramBot
   def self.response_json(request)
     return nil unless request.is_a?(Hash) || request.is_a?(TelegramBot::Request::Base)
 
-    payload = request.to_h
-    render json: payload
+    request.to_h
   end
 end
