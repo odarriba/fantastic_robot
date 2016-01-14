@@ -1,2 +1,5 @@
 require "telegram_bot/request/base"
+require "telegram_bot/request/get_me"
 require "telegram_bot/request/send_message"
+require "telegram_bot/request/forward_message"
+require "telegram_bot/request/send_location"
