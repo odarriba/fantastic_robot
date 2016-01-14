@@ -30,6 +30,10 @@ module TelegramBot
         payload = self.to_h
         payload.delete(:method)
 
+        payload.each do |key, value|
+          payload[key] = Faraday::UploadIO.new(payload[key], MIME::Types.type_for(payload[key].path).first.content_type) if (value.is_a?(File))
+        end
+
         TelegramBot.connection.api_call self.method, payload
       end
 

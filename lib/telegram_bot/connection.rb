@@ -7,9 +7,10 @@ module TelegramBot
     def initialize
       # Create the connection object to make calls to the API
       @conn = Faraday.new(:url => "https://api.telegram.org/bot#{TelegramBot.configuration.api_key}/") do |faraday|
-        faraday.request  :url_encoded             # form-encode POST params
+        faraday.request :multipart
+        faraday.request :url_encoded
         faraday.response :logger                  # log requests to STDOUT
-        faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+        faraday.adapter  :net_http  # make requests with Net::HTTP
       end
     end
 
@@ -19,11 +20,7 @@ module TelegramBot
 
       payload ||= {}
 
-      res = @conn.post do |req|
-        req.url method.to_s
-        req.headers['Content-Type'] = 'application/json'
-        req.body = payload.to_json
-      end
+      res = @conn.post method.to_s, payload
 
       raise Faraday::Error, "Wrong response: #{res.inspect}" if (res.status != 200)
 
