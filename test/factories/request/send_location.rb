@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :send_location, class: TelegramBot::Request::SendLocation do
+  factory :send_location, class: FantasticRobot::Request::SendLocation do
     chat_id { Faker::Number.number(10) }
     latitude { Faker::Number.decimal(2, 4) }
     longitude { Faker::Number.decimal(2, 4) }

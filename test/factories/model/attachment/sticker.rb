@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :attachment_sticker, class: TelegramBot::Model::Attachment::Sticker do
+  factory :attachment_sticker, class: FantasticRobot::Model::Attachment::Sticker do
     file_id { Faker::Lorem.word }
     file_size { Faker::Number.number(10) }
     width { Faker::Number.number(3) }

@@ -1,6 +1,6 @@
 require 'factory_girl'
 require 'faker'
-require 'telegram_bot'
+require 'fantastic_robot'
 
 # Fix deprecation message
 ActiveSupport.test_order = :random

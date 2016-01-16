@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :send_sticker, class: TelegramBot::Request::SendSticker do
+  factory :send_sticker, class: FantasticRobot::Request::SendSticker do
     chat_id { Faker::Number.number(10) }
     sticker { Faker::Lorem.word }
     reply_to_message_id { Faker::Number.number(10) }

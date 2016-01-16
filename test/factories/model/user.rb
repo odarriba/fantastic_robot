@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :user, class: TelegramBot::Model::User do
+  factory :user, class: FantasticRobot::Model::User do
     id { Faker::Number.number(10) }
     username { Faker::Internet.user_name }
     first_name { Faker::Name.first_name }

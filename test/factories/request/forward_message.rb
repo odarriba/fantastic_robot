@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :forward_message, class: TelegramBot::Request::ForwardMessage do
+  factory :forward_message, class: FantasticRobot::Request::ForwardMessage do
     chat_id { Faker::Number.number(10) }
     from_chat_id { Faker::Number.number(10) }
     message_id { Faker::Number.number(10) }
