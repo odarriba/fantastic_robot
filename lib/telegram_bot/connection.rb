@@ -1,4 +1,5 @@
 require "faraday"
+require "open-uri"
 
 module TelegramBot
   class Connection
@@ -25,6 +26,11 @@ module TelegramBot
       raise Faraday::Error, "Wrong response: #{res.inspect}" if (res.status != 200)
 
       return res
+    end
+
+    def get_by_path path
+      return open("https://api.telegram.org/bot#{TelegramBot.configuration.api_key}/#{path}")
+      raise Faraday::Error, "Wrong response: #{res.inspect}" if (res.status != 200)
     end
   end
 end
