@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :send_audio, class: TelegramBot::Request::SendAudio do
+  factory :send_audio, class: FantasticRobot::Request::SendAudio do
     chat_id { Faker::Number.number(10) }
     audio { Faker::Lorem.word }
     duration { Faker::Number.number(3) }

@@ -1,0 +1,6 @@
+require "fantastic_robot/model/base"
+require "fantastic_robot/model/user"
+require "fantastic_robot/model/chat"
+require "fantastic_robot/model/file"
+require "fantastic_robot/model/message"
+require "fantastic_robot/model/update"

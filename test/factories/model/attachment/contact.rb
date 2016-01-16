@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :attachment_contact, class: TelegramBot::Model::Attachment::Contact do
+  factory :attachment_contact, class: FantasticRobot::Model::Attachment::Contact do
     phone_number { Faker::Number.number(9) }
     user_id { Faker::Number.number(10) }
     first_name { Faker::Name.first_name }

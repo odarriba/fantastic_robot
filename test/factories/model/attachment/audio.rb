@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :attachment_audio, class: TelegramBot::Model::Attachment::Audio do
+  factory :attachment_audio, class: FantasticRobot::Model::Attachment::Audio do
     file_id { Faker::Lorem.word }
     file_size { Faker::Number.number(10) }
     duration { Faker::Number.number(3) }

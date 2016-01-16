@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :send_voice, class: TelegramBot::Request::SendVoice do
+  factory :send_voice, class: FantasticRobot::Request::SendVoice do
     chat_id { Faker::Number.number(10) }
     voice { Faker::Lorem.word }
     duration { Faker::Number.number(3) }

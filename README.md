@@ -1,5 +1,5 @@
-# telegram_bot_gem
-[![Build Status](https://travis-ci.org/odarriba/telegram_bot_gem.svg)](https://travis-ci.org/odarriba/telegram_bot_gem)
+# fantastic_robot
+[![Build Status](https://travis-ci.org/odarriba/fantastic_robot.svg)](https://travis-ci.org/odarriba/fantastic_robot)
 
 The aim of this gem is to provide a useful wrapper of Telegram's Bot API that makes use of Webhooks functionality.
 
@@ -8,7 +8,7 @@ The aim of this gem is to provide a useful wrapper of Telegram's Bot API that ma
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'telegram_bot'
+gem 'fantastic_robot'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ $ bundle
 
 Or install it yourself as:
 ```
-$ gem install telegram_bot
+$ gem install fantastic_robot
 ```
 
 ## Configuration
@@ -26,10 +26,10 @@ $ gem install telegram_bot
 Gem configuration can be initialized by running a custom generator:
 
 ```
-$ rails g telegram_bot:install
+$ rails g fantastic_robot:install
 ```
 
-Then, you can change the configuration by editing the file located at `config/initializers/telegram_bot.rb`
+Then, you can change the configuration by editing the file located at `config/initializers/fantastic_robot.rb`
 
 At least, you should include:
 * Your bot's token
@@ -46,18 +46,18 @@ This gem provides models to access easily to API updates, and to create response
 Used to parse received data from Telegram.
 
 Available models are:
-* TelegramBot::Model::Chat
-* TelegramBot::Model::Message
-* TelegramBot::Model::Update
-* TelegramBot::Model::User
-* TelegramBot::Model::Attachment::Audio
-* TelegramBot::Model::Attachment::Contact
-* TelegramBot::Model::Attachment::Document
-* TelegramBot::Model::Attachment::Location
-* TelegramBot::Model::Attachment::PhotoSize
-* TelegramBot::Model::Attachment::Sticker
-* TelegramBot::Model::Attachment::Video
-* TelegramBot::Model::Attachment::Voice
+* FantasticRobot::Model::Chat
+* FantasticRobot::Model::Message
+* FantasticRobot::Model::Update
+* FantasticRobot::Model::User
+* FantasticRobot::Model::Attachment::Audio
+* FantasticRobot::Model::Attachment::Contact
+* FantasticRobot::Model::Attachment::Document
+* FantasticRobot::Model::Attachment::Location
+* FantasticRobot::Model::Attachment::PhotoSize
+* FantasticRobot::Model::Attachment::Sticker
+* FantasticRobot::Model::Attachment::Video
+* FantasticRobot::Model::Attachment::Voice
 
 If you want to know the variables available in each one, you can check the [official docs](https://core.telegram.org/bots/api#available-types).
 
@@ -65,7 +65,7 @@ And they can be instantiated like any other model. You will commonly receive an 
 
 ```ruby
 received_hash = JSON.parse(request.body.read)
-received_update = TelegramBot::Model::Update.new(received_hash)
+received_update = FantasticRobot::Model::Update.new(received_hash)
 ```
 
 Associated models (like the `Message` included inside the `Update`) will be automatically converted when instantiating the `Update` object.
@@ -75,18 +75,18 @@ Associated models (like the `Message` included inside the `Update`) will be auto
 Request are objects that can receive (and validate) the parameters that can be sent in a request to the API.
 
 The available requests are:
-* TelegramBot::Request::ForwardMessage
-* TelegramBot::Request::GetMe
-* TelegramBot::Request::SendAudio
-* TelegramBot::Request::SendChatAction
-* TelegramBot::Request::SendDocument
-* TelegramBot::Request::SendLocation
-* TelegramBot::Request::SendMessage
-* TelegramBot::Request::SendPhoto
-* TelegramBot::Request::SendSticker
-* TelegramBot::Request::SendVideo
-* TelegramBot::Request::SendVoice
-* TelegramBot::Request::SetWebhook
+* FantasticRobot::Request::ForwardMessage
+* FantasticRobot::Request::GetMe
+* FantasticRobot::Request::SendAudio
+* FantasticRobot::Request::SendChatAction
+* FantasticRobot::Request::SendDocument
+* FantasticRobot::Request::SendLocation
+* FantasticRobot::Request::SendMessage
+* FantasticRobot::Request::SendPhoto
+* FantasticRobot::Request::SendSticker
+* FantasticRobot::Request::SendVideo
+* FantasticRobot::Request::SendVoice
+* FantasticRobot::Request::SetWebhook
 
 If you want to know the variables available in each one, you can check the [official docs](https://core.telegram.org/bots/api#available-methods).
 
@@ -97,7 +97,7 @@ There are two ways of sending a request:
 * All of them can be send asynchronously to the API using the `#send_request` method available in all request classes:
 
 ```ruby
-req = TelegramBot::Request::GetMe.new()
+req = FantasticRobot::Request::GetMe.new()
 response = req.send_request
 ```
 
@@ -107,9 +107,9 @@ response = req.send_request
 
 ```ruby
 def receive
-  received = TelegramBot::Model::Update.new(JSON.parse(request.body.read))
+  received = FantasticRobot::Model::Update.new(JSON.parse(request.body.read))
 
-  response = TelegramBot::Request::SendMessage.new({
+  response = FantasticRobot::Request::SendMessage.new({
     chat_id: received.message.chat.id,
     text: "Okay! I've got it!",
     reply_to_message_id: received.message.message_id
@@ -137,7 +137,7 @@ If you want to check out the gem's source code and want to contribute, you are w
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at [https://github.com/odarriba/telegram_bot_gem](https://github.com/odarriba/telegram_bot_gem). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at [https://github.com/odarriba/fantastic_robot](https://github.com/odarriba/fantastic_robot). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 Everyone's contributions are welcome, so if you want to contribute, just fork this repo, make the changes you want and create a descriptive pull request :)
 

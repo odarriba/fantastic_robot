@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :message, class: TelegramBot::Model::Message do
+  factory :message, class: FantasticRobot::Model::Message do
     message_id { Faker::Number.number(10) }
     date { Time.now.to_i }
     chat { attributes_for :chat }
