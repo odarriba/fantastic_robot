@@ -16,7 +16,14 @@ module TelegramBot
 
     # Check that the URL is a HTTPS one
     def https_url
-      (url[0,8] == "https://")
+      return false if (url.blank?)
+
+      unless (url[0,8] == "https://")
+        errors.add :url, "Must be an HTPPS URL."
+        return false
+      end
+
+      return true
     end
   end
 end
