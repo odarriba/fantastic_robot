@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    telegram_bot (0.1.0)
+    telegram_bot_gem (0.1.0)
       activemodel (>= 4.0.0, < 5.0.0)
       faraday (~> 0.9.2)
 
@@ -42,7 +42,7 @@ DEPENDENCIES
   faker (~> 1.6)
   minitest (~> 5.0)
   rake (~> 10.0)
-  telegram_bot!
+  telegram_bot_gem!
 
 BUNDLED WITH
    1.11.2
