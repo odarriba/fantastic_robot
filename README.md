@@ -1,4 +1,4 @@
-# telegram_bot_gem
+# telegram_bot gem
 [![Build Status](https://travis-ci.org/odarriba/telegram_bot_gem.svg)](https://travis-ci.org/odarriba/telegram_bot_gem)
 
 The aim of this gem is to provide a useful wrapper of Telegram's Bot API that makes use of Webhooks functionality.
