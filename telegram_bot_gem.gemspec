@@ -4,14 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'telegram_bot/version'
 
 Gem::Specification.new do |s|
-  s.name          = "telegram_bot"
+  s.name          = "telegram_bot_gem"
   s.version       = TelegramBot::VERSION
   s.authors       = ["Óscar de Arriba"]
   s.email         = ["odarriba@gmail.com"]
 
-  s.summary       = %q{Ruby wrapper of Telegram's Bot API with webhooks functionality}
-  s.description   = %q{Ruby wrapper of Telegram's Bot API to create applications making use of Webhooks functionality.}
-  s.homepage      = ""
+  s.summary       = %q{Ruby wrapper of Telegram's Bot API with web hooks functionality}
+  s.description   = %q{Ruby wrapper of Telegram's Bot API to create applications using web hooks functionality.}
+  s.homepage      = "https://github.com/odarriba/telegram_bot_gem"
   s.license       = "MIT"
 
   s.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
