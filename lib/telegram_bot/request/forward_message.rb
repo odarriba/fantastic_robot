@@ -8,6 +8,7 @@ module TelegramBot
     validates :message_id, presence: true
     validates :chat_id, numericality: true, unless: "chat_id.to_s[0,1] == '@'"
     validates :from_chat_id, numericality: true, unless: "from_chat_id.to_s[0,1] == '@'"
+    validates :reply_to_message_id, numericality: true, allow_blank: true
 
     def initialize(attributes = {})
       super(attributes)
