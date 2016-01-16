@@ -42,7 +42,7 @@ module TelegramBot
   # Function to register the configured webhook against the Telegram API.
   #
   def self.register_webhook
-    TelegramBot::Request::SetWebhook.new(url: self.configuration.callback_url).send
+    TelegramBot::Request::SetWebhook.new(url: self.configuration.callback_url).send_request
   end
 
   ##

@@ -6,7 +6,7 @@ module TelegramBot
         def get_file
           unless (self.file_id.blank?)
             request = TelegramBot::Request::GetFile(file_id: self.file_id)
-            response = TelegramBot::Model::File.new(JSON.parse(request.send))
+            response = TelegramBot::Model::File.new(JSON.parse(request.api_call))
           end
         end
       end

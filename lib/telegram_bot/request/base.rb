@@ -24,7 +24,7 @@ module TelegramBot
       end
 
       # Send request to Telegram API
-      def send
+      def api_call
         raise ArgumentError, "Method name not defined" if (self.method.blank?)
 
         payload = self.to_h
