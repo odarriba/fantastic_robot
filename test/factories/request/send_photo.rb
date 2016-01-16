@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :send_photo, class: TelegramBot::Request::SendPhoto do
+  factory :send_photo, class: FantasticRobot::Request::SendPhoto do
     chat_id { Faker::Number.number(10) }
     photo { Faker::Lorem.word }
     caption { Faker::Lorem.sentence }
