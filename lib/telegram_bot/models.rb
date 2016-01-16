@@ -1,0 +1,6 @@
+require "telegram_bot/model/base"
+require "telegram_bot/model/user"
+require "telegram_bot/model/chat"
+require "telegram_bot/model/file"
+require "telegram_bot/model/message"
+require "telegram_bot/model/update"
