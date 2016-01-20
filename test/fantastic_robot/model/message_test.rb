@@ -25,7 +25,7 @@ class MessageTest < ActiveSupport::TestCase
   end
 
   def test_numeric_attributes
-    model_with_numeric_attributes(@model_name, [:message_id, :date, :migrate_to_chat_id, :migrate_from_chat_id])
+    model_with_numeric_attributes(@model_name, [:message_id, :date, :forward_date, :migrate_to_chat_id, :migrate_from_chat_id])
   end
 
   def test_model_with_serialization

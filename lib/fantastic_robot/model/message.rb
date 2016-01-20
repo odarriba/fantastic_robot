@@ -11,12 +11,12 @@ require 'fantastic_robot/model/attachment/voice'
 module FantasticRobot
   class Model::Message < Model::Base
 
-    attr_accessor :message_id, :from, :date, :chat, :forward_from, :fordward_date,
+    attr_accessor :message_id, :from, :date, :chat, :forward_from, :forward_date,
       :reply_to_message
 
     validates :message_id, :date, :chat, presence: true
     validates :message_id, :date, numericality: true
-    validates :fordward_date, numericality: true, unless: 'fordward_date.blank?'
+    validates :forward_date, numericality: true, allow_blank: true
 
     attr_accessor :text, :audio, :document, :photo, :sticker, :video, :voice,
       :caption, :contact, :location
@@ -25,8 +25,8 @@ module FantasticRobot
       :delete_chat_photo, :group_chat_created, :supergroup_chat_created,
       :channel_chat_created, :migrate_to_chat_id, :migrate_from_chat_id
 
-    validates :migrate_to_chat_id, numericality: true, unless: 'migrate_to_chat_id.blank?'
-    validates :migrate_from_chat_id, numericality: true, unless: 'migrate_from_chat_id.blank?'
+    validates :migrate_to_chat_id, numericality: true, allow_blank: true
+    validates :migrate_from_chat_id, numericality: true, allow_blank: true
 
     # Field conversions of this model
     FIELD_CONVERSIONS = {
