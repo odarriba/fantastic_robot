@@ -33,7 +33,7 @@ module FantasticRobot
           end
         end
 
-        attributes = attributes.delete_if{|k, v| self.respond_to?("#{k}=")}
+        attributes = attributes.delete_if{|k, v| !self.respond_to?("#{k}=")}
 
         super(attributes)
       end
