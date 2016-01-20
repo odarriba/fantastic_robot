@@ -5,7 +5,7 @@ FactoryGirl.define do
     message_id { Faker::Number.number(10) }
     date { Time.now.to_i }
     chat { attributes_for :chat }
-    fordward_date { Time.now.to_i }
+    forward_date { Time.now.to_i }
     text { Faker::Lorem.paragraph }
     caption { Faker::Lorem.paragraph }
     new_chat_title { Faker::Lorem.paragraph }
@@ -17,7 +17,7 @@ FactoryGirl.define do
     migrate_from_chat_id { Faker::Number.number(10) }
 
     factory :message_without_optional_fields do
-      fordward_date { nil }
+      forward_date { nil }
       text { nil }
       caption { nil }
       new_chat_title { nil }
