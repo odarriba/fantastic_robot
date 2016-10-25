@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.0.0'
 
-  s.add_dependency "activemodel", '>= 4.0.0', '< 5.0.0'
+  s.add_dependency "activemodel", '>= 4.0.0', '< 5.1.0'
   s.add_dependency "faraday", "~> 0.9.2"
 
   s.add_development_dependency "bundler", "~> 1.10"
