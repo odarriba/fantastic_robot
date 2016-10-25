@@ -17,3 +17,9 @@ branches:
   only:
     - master
     - development
+
+gemfile:
+  - gemfiles/activemodel_4_0.gemfile
+  - gemfiles/activemodel_4_1.gemfile
+  - gemfiles/activemodel_4_2.gemfile
+  - gemfiles/activemodel_5_0.gemfile
