@@ -29,10 +29,7 @@ matrix:
   exclude:
   - rvm: 2.0.0
     gemfile: gemfiles/activemodel_5_0.gemfile
-    env: ISOLATED=true
   - rvm: 2.1.0
     gemfile: gemfiles/activemodel_5_0.gemfile
-    env: ISOLATED=true
   - rvm: 2.2.0
     gemfile: gemfiles/activemodel_5_0.gemfile
-    env: ISOLATED=true
