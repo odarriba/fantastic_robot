@@ -6,7 +6,7 @@ module FantasticRobot
 
     validates :file_id, :duration, presence: true
     validates :duration, numericality: true
-    validates :file_size, numericality: true, unless: 'file_size.blank?'
-    
+    validates :file_size, numericality: true, unless: -> { file_size.blank? }
+
   end
 end
