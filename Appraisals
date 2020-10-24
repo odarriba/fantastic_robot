@@ -11,6 +11,6 @@ appraise "activemodel-4-2" do
 end
 
 appraise "activemodel-5-0" do
-  gem "activemodel", "= 5.0.0.1"
+  gem "activemodel", "~> 5.0"
 end
 
