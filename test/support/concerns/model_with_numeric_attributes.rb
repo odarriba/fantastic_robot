@@ -5,8 +5,8 @@ module ModelWithNumericAttributes
 
   included do
     def model_with_numeric_attributes(model_name, numeric_attributes)
-      attribute_list = FactoryGirl.attributes_for(model_name)
-      object = FactoryGirl.build(model_name, attribute_list)
+      attribute_list = FactoryBot.attributes_for(model_name)
+      object = FactoryBot.build(model_name, attribute_list)
 
       numeric_attributes.each do |attrib|
         # Test that the attributes received are in the model

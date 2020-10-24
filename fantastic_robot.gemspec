@@ -21,13 +21,13 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.0.0'
 
-  s.add_dependency "activemodel", '>= 4.0.0', '< 5.1.0'
+  s.add_dependency "activemodel", '>= 4.0.0', '< 6.0.0'
   s.add_dependency "faraday", "~> 0.9.2"
 
   s.add_development_dependency "bundler", "~> 1.10"
   s.add_development_dependency "rake", "~> 10.0"
   s.add_development_dependency "minitest", "> 4.2", "< 6"
-  s.add_development_dependency "factory_girl", "~> 4.0"
+  s.add_development_dependency "factory_bot", "> 0"
   s.add_development_dependency "faker", "~> 1.6"
   s.add_development_dependency "appraisal", "~> 2.1.0"
 end

@@ -1,6 +1,6 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
+# Read about factories at https://github.com/thoughtbot/factory_bot
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :forward_message, class: FantasticRobot::Request::ForwardMessage do
     chat_id { Faker::Number.number(10) }
     from_chat_id { Faker::Number.number(10) }

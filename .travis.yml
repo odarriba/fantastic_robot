@@ -1,15 +1,12 @@
 language: ruby
 rvm:
-  - 2.0.0
-  - 2.1.0
-  - 2.2.0
-  - 2.2.3
-  - 2.3.1
+  - 2.5.0
+  - 2.6.0
 
 before_install:
   - gem update --system
   - gem --version
-  - gem install bundler
+  - gem install bundler --version=1.17.2
   - bundler --version
 
 script: bundle exec rake test
@@ -24,12 +21,3 @@ gemfile:
   - gemfiles/activemodel_4_1.gemfile
   - gemfiles/activemodel_4_2.gemfile
   - gemfiles/activemodel_5_0.gemfile
-
-matrix:
-  exclude:
-  - rvm: 2.0.0
-    gemfile: gemfiles/activemodel_5_0.gemfile
-  - rvm: 2.1.0
-    gemfile: gemfiles/activemodel_5_0.gemfile
-  - rvm: 2.2.0
-    gemfile: gemfiles/activemodel_5_0.gemfile

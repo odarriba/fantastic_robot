@@ -7,7 +7,7 @@ class GetMeTest < ActiveSupport::TestCase
 
   def setup
     @model_name = :get_me
-    @subject = FactoryGirl.build(@model_name)
+    @subject = FactoryBot.build(@model_name)
   end
 
   def test_that_factory_is_valid

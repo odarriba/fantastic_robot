@@ -1,6 +1,6 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
+# Read about factories at https://github.com/thoughtbot/factory_bot
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :file, class: FantasticRobot::Model::File do
     file_id { Faker::Number.number(10) }
     file_size { Faker::Number.number(10) }

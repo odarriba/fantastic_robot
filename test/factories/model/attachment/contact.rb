@@ -1,6 +1,6 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
+# Read about factories at https://github.com/thoughtbot/factory_bot
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :attachment_contact, class: FantasticRobot::Model::Attachment::Contact do
     phone_number { Faker::Number.number(9) }
     user_id { Faker::Number.number(10) }

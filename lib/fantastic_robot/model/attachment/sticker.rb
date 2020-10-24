@@ -6,7 +6,7 @@ module FantasticRobot
 
     validates :file_id, :width, :height, presence: true
     validates :width, :height, numericality: true
-    validates :file_size, numericality: true, unless: 'file_size.blank?'
+    validates :file_size, numericality: true, unless: -> { file_size.blank? }
 
     # Field conversions of this model
     FIELD_CONVERSIONS = {

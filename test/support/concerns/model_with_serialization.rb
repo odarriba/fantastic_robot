@@ -5,8 +5,8 @@ module ModelWithSerialization
 
   included do
     def model_with_serialization(model_name)
-      attribute_list = FactoryGirl.attributes_for(model_name)
-      object = FactoryGirl.build(model_name, attribute_list)
+      attribute_list = FactoryBot.attributes_for(model_name)
+      object = FactoryBot.build(model_name, attribute_list)
 
       # Test hash conversion
       attribute_list.each do |key, value|
