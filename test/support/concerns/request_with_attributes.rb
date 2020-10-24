@@ -5,8 +5,8 @@ module RequestWithAttributes
 
   included do
     def request_with_attributes(model_name)
-      attribute_list = FactoryGirl.attributes_for(model_name)
-      object = FactoryGirl.build(model_name, attribute_list)
+      attribute_list = FactoryBot.attributes_for(model_name)
+      object = FactoryBot.build(model_name, attribute_list)
 
       attribute_list.each do |attrib, value|
         # Test that the attribute is readable

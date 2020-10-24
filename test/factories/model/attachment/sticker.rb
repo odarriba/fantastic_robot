@@ -1,6 +1,6 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
+# Read about factories at https://github.com/thoughtbot/factory_bot
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :attachment_sticker, class: FantasticRobot::Model::Attachment::Sticker do
     file_id { Faker::Lorem.word }
     file_size { Faker::Number.number(10) }

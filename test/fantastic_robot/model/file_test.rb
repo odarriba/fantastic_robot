@@ -8,7 +8,7 @@ class FantasticRobot::FileTest < ActiveSupport::TestCase
 
   def setup
     @model_name = :file
-    @subject = FactoryGirl.build(@model_name)
+    @subject = FactoryBot.build(@model_name)
   end
 
   def test_that_factory_is_valid

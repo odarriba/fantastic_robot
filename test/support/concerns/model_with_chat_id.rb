@@ -5,8 +5,8 @@ module ModelWithChatId
 
   included do
     def model_with_chat_id(model_name, id_field)
-      attribute_list = FactoryGirl.attributes_for(model_name)
-      object = FactoryGirl.build(model_name, attribute_list)
+      attribute_list = FactoryBot.attributes_for(model_name)
+      object = FactoryBot.build(model_name, attribute_list)
 
       assert(object.valid?, "Default object isn't valid!")
 

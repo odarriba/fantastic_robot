@@ -8,7 +8,7 @@ class AttachmentLocationTest < ActiveSupport::TestCase
 
   def setup
     @model_name = :attachment_location
-    @subject = FactoryGirl.build(@model_name)
+    @subject = FactoryBot.build(@model_name)
   end
 
   def test_that_factory_is_valid

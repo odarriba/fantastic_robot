@@ -1,6 +1,6 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
+# Read about factories at https://github.com/thoughtbot/factory_bot
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :set_webhook, class: FantasticRobot::Request::SetWebhook do
     url { "https://#{Faker::Internet.domain_name}" }
 

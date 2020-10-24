@@ -1,6 +1,6 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
+# Read about factories at https://github.com/thoughtbot/factory_bot
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :send_location, class: FantasticRobot::Request::SendLocation do
     chat_id { Faker::Number.number(10) }
     latitude { Faker::Number.decimal(2, 4) }

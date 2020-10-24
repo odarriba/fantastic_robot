@@ -8,7 +8,7 @@ class ChatTest < ActiveSupport::TestCase
 
   def setup
     @model_name = :chat
-    @subject = FactoryGirl.build(@model_name)
+    @subject = FactoryBot.build(@model_name)
   end
 
   def test_that_factory_is_valid

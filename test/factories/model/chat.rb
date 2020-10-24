@@ -1,6 +1,6 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
+# Read about factories at https://github.com/thoughtbot/factory_bot
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :chat, class: FantasticRobot::Model::Chat do
     id { Faker::Number.number(10) }
     type { FantasticRobot::Model::Chat::VALID_TYPES.sample }
